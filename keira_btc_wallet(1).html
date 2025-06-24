@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keira's Buyers Lounge - BTC Payment Wallet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #f8f8f8;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      border-bottom: 2px solid #333;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #fbc531;
+      margin-bottom: 20px;
+    }
+
+    .wallet-box {
+      background-color: #222;
+      border: 1px solid #444;
+      padding: 20px;
+      border-radius: 10px;
+      word-break: break-word;
+      position: relative;
+    }
+
+    .wallet-address {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #00ff95;
+    }
+
+    .copy-btn {
+      background-color: #fbc531;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .copy-btn:hover {
+      background-color: #e1a800;
+    }
+
+    .qr-code {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .qr-code img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .embed-code {
+      background: #1e1e1e;
+      padding: 20px;
+      margin-top: 30px;
+      border-left: 4px solid #fbc531;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #999;
+      font-size: 0.9em;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Keira's Buyers Lounge
+  </header>
+
+  <div class="container">
+    <h2>Bitcoin Payment Wallet</h2>
+    <div class="wallet-box">
+      Send BTC payments to the address below:
+      <div class="wallet-address" id="btcAddress">
+        bc1q8nn3ldj8twlm0lw3fvhww039k2y8rv5m2v2cx0
+      </div>
+      <button class="copy-btn" onclick="copyToClipboard()">Copy Address</button>
+
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bc1q8nn3ldj8twlm0lw3fvhww039k2y8rv5m2v2cx0" alt="BTC QR Code" />
+      </div>
+    </div>
+
+    <div class="embed-code">
+      <!-- Code Embed 1 -->
+      &lt;script src="https://your-embed-source.com/embed.js"&gt;&lt;/script&gt;
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Keira's Buyers Lounge
+  </footer>
+
+  <script>
+    function copyToClipboard() {
+      const address = document.getElementById('btcAddress').innerText;
+      navigator.clipboard.writeText(address).then(() => {
+        alert("Wallet address copied to clipboard!");
+      });
+    }
+  </script>
+
+</body>
+</html>
